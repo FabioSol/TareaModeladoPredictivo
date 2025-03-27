@@ -6,8 +6,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 RAW_DATA_DIR = os.path.join(DATA_DIR, "raw")
-PROCESSED_DATA_DIR = os.path.join(DATA_DIR, "processed")
-PARQUET_DATA_DIR = os.path.join(DATA_DIR, "parquet")
+PARSED_DATA_DIR = os.path.join(DATA_DIR, "parsed")
+CLEANED_DATA_DIR = os.path.join(DATA_DIR, "cleaned")
 
 NYC_DATA_API = {
     "base_url": "https://data.cityofnewyork.us/resource/h9gi-nx95",

@@ -3,3 +3,6 @@ config~=0.5.1
 pandas~=2.2.3
 tqdm~=4.67.1
 pyarrow~=19.0.1
+numpy~=2.2.4
+matplotlib~=3.10.1
+seaborn~=0.13.2

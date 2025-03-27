@@ -1,7 +1,7 @@
 import pyarrow.parquet as pq
 import pandas as pd
 import random
-from config.constants import PARQUET_DATA_DIR
+from config.constants import PARSED_DATA_DIR,CLEANED_DATA_DIR
 
 class Loader:
     def __init__(self, filepath):
@@ -9,8 +9,12 @@ class Loader:
         self.parquet = pq.ParquetFile(filepath)
 
     @classmethod
-    def preprocessed(cls):
-        return cls(PARQUET_DATA_DIR+'/combined.parquet')
+    def parsed(cls):
+        return cls(PARSED_DATA_DIR+'/combined.parsed')
+
+    @classmethod
+    def cleaned(cls):
+        return cls(CLEANED_DATA_DIR + '/clean.parsed')
 
     def get_all(self)->pd.DataFrame:
         return self.parquet.read().to_pandas()
@@ -51,6 +55,5 @@ class Loader:
 
         # Combine sampled batches
         df_sample = pd.concat(sampled_rows).head(sample_size)
-
         return df_sample
 
